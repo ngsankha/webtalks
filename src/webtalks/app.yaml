@@ -13,3 +13,8 @@ builtins:
 
 env_variables:
   DJANGO_SETTINGS_MODULE: 'webtalks.settings'
+
+handlers:
+- url: /static
+  static_dir: webtalks/static
+  expiration: '0'
