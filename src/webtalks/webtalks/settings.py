@@ -11,6 +11,11 @@ MANAGERS = ADMINS
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__)) + os.sep
 
+LIBS_DIR = BASE_DIR + 'libs' + os.sep
+
+if LIBS_DIR not in sys.path:
+    sys.path.append(LIBS_DIR)
+
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or os.getenv('SETTINGS_MODE') == 'prod'):
     is_appengine = True
 else:
@@ -140,6 +145,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'webtalks.libs.south',
+    'webtalks.apps.conference',
 )
 
 # A sample logging configuration. The only tangible logging
